@@ -12,8 +12,8 @@ if (window.mobileAndTabletCheck()) {
     console.log((e.alpha));
     Object.assign(document.documentElement, {
       style: `
-      --move-x:${(e.beta)}deg;
-      --move-y:${(e.alpha)}deg;
+      --move-x:${(e.beta) * -0.005}deg;
+      --move-y:${(e.alpha) * -0.01}deg;
       `
     })
   })
