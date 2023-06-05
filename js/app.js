@@ -5,16 +5,21 @@ window.mobileAndTabletCheck = function () {
   return check;
 };
 if (window.mobileAndTabletCheck()) {
+
   window.addEventListener("deviceorientation", e => {
+    console.log('mobile');
+    console.log((e.beta));
+    console.log((e.alpha));
     Object.assign(document.documentElement, {
       style: `
-      --move-x:${(e.clientX - window.innerWidth / 2) * -0.005}deg;
-      --move-y:${(e.clientY - window.innerHeight / 2) * -0.01}deg;
+      --move-x:${(e.beta)}deg;
+      --move-y:${(e.alpha)}deg;
       `
     })
   })
 }
 else {
+  console.log('no mobile');
   document.addEventListener('mousemove', e => {
     Object.assign(document.documentElement, {
       style: `
