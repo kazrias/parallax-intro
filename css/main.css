@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 :root {
   --index: calc(1vw + 1vh);
   --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
