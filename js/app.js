@@ -7,9 +7,6 @@ window.mobileAndTabletCheck = function () {
 if (window.mobileAndTabletCheck()) {
 
   window.addEventListener("deviceorientation", e => {
-    console.log('mobile');
-    console.log('beta',(e.beta));
-    console.log('gamma',(e.alpha));
     Object.assign(document.documentElement, {
       style: `
       --move-x:${(e.gamma)*-0.3}deg;
@@ -19,7 +16,6 @@ if (window.mobileAndTabletCheck()) {
   })
 }
 else {
-  console.log('no mobile');
   document.addEventListener('mousemove', e => {
     Object.assign(document.documentElement, {
       style: `
