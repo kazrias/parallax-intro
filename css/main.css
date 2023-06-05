@@ -129,6 +129,5 @@ body {
 @media (max-width:1000) {
   .layers__container {
     transform: rotateX(var(--move-x)) rotateY(var(--move-y));
-
   }
 }
