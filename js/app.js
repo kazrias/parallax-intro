@@ -5,22 +5,22 @@ window.mobileAndTabletCheck = function () {
   return check;
 };
 if (window.mobileAndTabletCheck()) {
-
   window.addEventListener("deviceorientation", e => {
-    console.log('mobile');
+    console.log('pushed');
     console.log((e.beta));
     console.log((e.alpha));
     Object.assign(document.documentElement, {
       style: `
       --move-x:${(e.beta) * -0.005}deg;
-      --move-y:${(e.alpha) * -0.01}deg;
+      --move-y:${(e.gamma) * -0.01}deg;
       `
     })
   })
 }
 else {
-  console.log('no mobile');
+  console.log('pushed');
   document.addEventListener('mousemove', e => {
+    console.log('pushed');
     Object.assign(document.documentElement, {
       style: `
       --move-x:${(e.clientX - window.innerWidth / 2) * -0.005}deg;
