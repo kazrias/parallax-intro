@@ -119,6 +119,16 @@ body {
   outline: none;
   cursor: pointer;
 }
-.layer-4,.layer-5,.layer-6{
+
+.layer-4,
+.layer-5,
+.layer-6 {
   pointer-events: none;
+}
+
+@media (max-width:1000) {
+  .layers__container {
+    transform: rotateX(var(--move-x)) rotateY(var(--move-y));
+
+  }
 }
