@@ -12,8 +12,8 @@ if (window.mobileAndTabletCheck()) {
     console.log('gamma',(e.alpha));
     Object.assign(document.documentElement, {
       style: `
-      --move-x:${(e.gamma)*-0.005}deg;
-      --move-y:${(e.beta)* -0.01}deg;
+      --move-x:${(e.gamma)*-0.3}deg;
+      --move-y:${(e.beta)* -0.3}deg;
       `
     })
   })
