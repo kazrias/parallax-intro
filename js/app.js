@@ -7,11 +7,12 @@ window.mobileAndTabletCheck = function () {
 if (window.mobileAndTabletCheck()) {
 
   window.addEventListener("deviceorientation", e => {
-    console.log('gamma', e.gamma);
-    console.log('beta', e.beta);
     let gamma = e.gamma;
     let beta = e.beta;
-    console.log(typeof gamma);
+    if (gamma > 31)
+      gamma = 31;
+    else if (gamma < -31)
+      gamma = -31;
     if (beta > 16)
       beta = 16;
     else if (beta < -16)
