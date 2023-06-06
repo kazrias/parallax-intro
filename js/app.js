@@ -7,12 +7,19 @@ window.mobileAndTabletCheck = function () {
 if (window.mobileAndTabletCheck()) {
 
   window.addEventListener("deviceorientation", e => {
-    console.log(e.gamma);
-    console.log(e.beta);
+    console.log('gamma', e.gamma);
+    console.log('beta', e.beta);
+    let gamma = e.gamma;
+    let beta = e.beta;
+    console.log(typeof gamma);
+    if (beta > 16)
+      beta = 16;
+    else if (beta < -16)
+      beta = -16;
     Object.assign(document.documentElement, {
       style: `
-      --move-x:${(e.gamma)*-0.3}deg;
-      --move-y:${(e.beta)* -0.3}deg;
+      --move-x:${(gamma) * -0.3}deg;
+      --move-y:${(beta) * -0.3}deg;
       `
     })
   })
